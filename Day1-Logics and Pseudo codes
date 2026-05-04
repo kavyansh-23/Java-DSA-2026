@@ -29,6 +29,16 @@ START
      PRINT "Odd"
   ENDIF
 END
+### Even/Odd Logic Flowchart
+
+```mermaid
+graph TD
+    A[Start] --> B{Input Number x}
+    B --> C{x % 2 == 0?}
+    C -- Yes --> D[Print Even]
+    C -- No --> E[Print Odd]
+    D --> F[End]
+    E --> F[End]
 
 3. Calculating Factorial using a function $fun(n)$.
 program:
