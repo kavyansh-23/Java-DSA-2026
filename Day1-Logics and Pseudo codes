@@ -1,0 +1,57 @@
+# Day 1: Logic Building & Java Fundamentals
+May 4, 2026
+Pseudo-code, Type Casting, and Control Flow
+
+1. Core Logic: Swapping Two Variables
+Problem: Swap the values of two variables ($a=5, b=3$) without using a third temporary variable.
+Logic Flow:
+- $a = a + b$ (Sum both)
+- $b = a - b$ (New $b$ is the original $a$)
+- $a = a - b$ (New $a$ is the original $b$)
+
+ Pseudo-code:
+START
+  Declare Integer a, b
+  Set a = 5, b = 3
+  a = a + b
+  b = a - b
+  a = a - b
+  Print a, b
+END
+
+2. Pseudo code to check if a number is odd or even
+START
+  Declare Integer x
+  Input x
+  IF x MOD 2 == 0 THEN
+     PRINT "Even"
+  ELSE
+     PRINT "Odd"
+  ENDIF
+END
+
+3. Calculating Factorial using a function $fun(n)$.
+program:
+int fun(int n) {
+    if (n == 0) return 1;
+    return n * fun(n - 1);
+}
+
+Pseudo code:
+START
+  Function fun(n) START
+    IF n == 0 THEN
+       RETURN 1
+    ELSE
+       RETURN n * fun(n - 1)
+    ENDIF
+  End Function
+  Print fun(3)
+END
+
+Some common conversions:-
+1) double → int
+2) int → char
+3) char → int
+4) int → byte
+5) double → float
