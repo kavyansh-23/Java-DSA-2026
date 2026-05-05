@@ -1,0 +1,85 @@
+# Day 2: Conditionals, Flow Control & String Manipulation
+**Date:** May 5, 2026  
+**Topic:** Switch Cases, Nested Logic, and Character Math
+
+## 1. Basic Calculator (Switch Case)
+ Using `switch` to create a menu-driven program for arithmetic operations. This is more efficient than a long chain of `if-else` statements for simple menu selection.
+
+### Java Implementation:
+```java
+int n = sc.nextInt(); // Operator Choice (1-4)
+int a = sc.nextInt(); // First Number
+int b = sc.nextInt(); // Second Number
+
+switch(n) {
+    case 1: 
+        System.out.println(a + b); 
+        break;
+    case 2: 
+        System.out.println(a - b); 
+        break;
+    case 3: 
+        System.out.println(a * b); 
+        break;
+    case 4: 
+        if (b != 0) {
+            System.out.println(a / b);
+        } else {
+            System.out.println("Error: Division by zero");
+        }
+        break;
+    default: 
+        System.out.println("Give numbers between 1-4");
+}
+```
+
+---
+
+## 2. Advanced Conditional: Finding the Largest of Three
+**Logic:** Using logical AND (`&&`) to compare multiple variables simultaneously.
+
+```text
+START
+  Input a, b, c
+  IF (a >= b) AND (a >= c) THEN
+     PRINT "a is largest"
+  ELSE IF (b >= a) AND (b >= c) THEN
+     PRINT "b is largest"
+  ELSE
+     PRINT "c is largest"
+END
+```
+
+---
+
+## 3. String Manipulation: Move Hash to Front
+**Problem:** Given a string containing `#` symbols, move all hashes to the beginning of the string while maintaining the order of other characters.
+**Example:** `Move#Hash#to#Front` $\rightarrow$ `###MoveHashtoFront`
+
+### Algorithm:
+1. Count the occurrences of `#` in the input string.
+2. Create a new `StringBuilder`.
+3. Append the counted number of `#` to the start.
+4. Append all characters from the original string that are NOT `#`.
+
+---
+
+## 4. Complex Character Math: Reverse Position Weighting
+**The Challenge:** Calculate a sum where each character is mapped to its mirrored alphabetical position ($a=26, b=25...z=1$) and multiplied by its 1-based index in the string.
+
+### Calculation Logic for "abc":
+| Character | Reverse Value ($26 - (ch - 'a')$) | Position (i + 1) | Product |
+| :--- | :--- | :--- | :--- |
+| **a** | 26 | 1 | $26 \times 1 = 26$ |
+| **b** | 25 | 2 | $25 \times 2 = 50$ |
+| **c** | 24 | 3 | $24 \times 3 = 72$ |
+| **Final Output** | | | **148** |
+
+### Code Implementation:
+```java
+int sum = 0;
+for(int i = 0; i < s.length(); i++) {
+    int reverseVal = 26 - (s.charAt(i) - 'a');
+    sum += reverseVal * (i + 1);
+}
+System.out.println(sum);
